@@ -16,20 +16,15 @@ def get_max_salary(path: str) -> int:
 
 
 def get_min_salary(path: str) -> int:
-    """Get the minimum salary of all jobs
+    min_salary = 100000000
+    list_of_jobs = read(path)
 
-    Must call `read`
+    for job in list_of_jobs:
+        if job['min_salary'].isnumeric():
+            if int(job['min_salary']) < int(min_salary):
+                min_salary = job['min_salary']
 
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The minimum salary paid out of all job opportunities
-    """
+    return int(min_salary)
     raise NotImplementedError
 
 

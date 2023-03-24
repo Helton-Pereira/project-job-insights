@@ -9,7 +9,7 @@ def read(path: str) -> List[Dict]:
     with open(path, encoding='utf-8') as file:
         jobs_reader = csv.DictReader(file, delimiter=',')
         for job in jobs_reader:
-            list_dict.append(job)   
+            list_dict.append(job)
         return list_dict
 
     raise NotImplementedError
