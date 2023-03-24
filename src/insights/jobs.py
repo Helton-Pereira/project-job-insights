@@ -9,8 +9,7 @@ def read(path: str) -> List[Dict]:
     with open(path, encoding='utf-8') as file:
         jobs_reader = csv.DictReader(file, delimiter=',')
         for job in jobs_reader:
-            list_dict.append(job)
-        
+            list_dict.append(job)   
         return list_dict
 
     raise NotImplementedError
@@ -23,7 +22,6 @@ def get_unique_job_types(path: str) -> List[str]:
     for job in list_of_jobs:
         if job['job_type'] not in list:
             list.append(job['job_type'])
-
     return list
 
     raise NotImplementedError

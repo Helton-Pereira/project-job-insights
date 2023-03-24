@@ -1,5 +1,5 @@
 from typing import List, Dict
-from jobs import read
+from src.insights.jobs import read
 
 
 def get_unique_industries(path: str) -> List[str]:
@@ -7,8 +7,9 @@ def get_unique_industries(path: str) -> List[str]:
     list = []
 
     for job in list_of_jobs:
-        if job['industry'] not in list:
-            list.append(job['industry'])
+        if job['industry'] != '':
+            if job['industry'] not in list:
+                list.append(job['industry'])
 
     return list
     raise NotImplementedError
