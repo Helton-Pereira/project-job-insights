@@ -7,8 +7,8 @@ def get_max_salary(path: str) -> int:
     list_of_jobs = read(path)
 
     for job in list_of_jobs:
-        if job['max_salary'] != '':
-            if int(job['max_salary']) > max_salary:
+        if job['max_salary'] != '' and job['max_salary'] != 'invalid':
+            if int(job['max_salary']) > int(max_salary):
                 max_salary = job['max_salary']
 
     return int(max_salary)
